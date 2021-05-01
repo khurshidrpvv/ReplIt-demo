@@ -55,8 +55,9 @@ const Terminal = () => {
       fetchPolicy: 'network-only'
     });
 
-    
+  // useCustomQuery returns formatted comands in JSON
   const { error, data } = useCustomQuery();
+  
   // const { error, data } = useQuery(
   //   gql`
   //     query {

@@ -42,7 +42,7 @@ const QueryPrompt = props => {
   // }, [parsed, query, called]);
 
   React.useEffect(() => {
-    // we all ready have data, run this effect only once, or it will cause infinite render
+    // we allready have data, run this effect only once
     if ((data || error) && props.item) {
       props.item.next();
     }
