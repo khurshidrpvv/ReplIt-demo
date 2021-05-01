@@ -72,12 +72,12 @@ function createCommands(input, output, path) {
 
 export const useCustomQuery =()=> {
     let commands = {
-    data: {
-        command: {
-            path: ['clui'],
-            commands: {}
-        }
-    }
+      data: {
+          command: {
+              path: ['clui'],
+              commands: {}
+          }
+      }
     }
     createCommands(commandInput, commands.data.command.commands, commands.data.command.path)
     return commands
@@ -102,7 +102,7 @@ export const getQueryResult = (path) => {
         temp = temp[path[i]]
     }
     // return a dummy function to supress error in QueryPromp.jsx
-    return [()=> {}, {data: output}]
+    return [()=> {}, {data: output, called:true, loading:false}]
 }
 
 

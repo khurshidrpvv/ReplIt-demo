@@ -23,29 +23,30 @@ const QueryPrompt = props => {
   
   const [query, { data, loading, error, called }] = getQueryResult(props.command.path);
   
-  // useLazyQuery(props.doc, {
+  // const [query, { data, loading, error, called }] = useLazyQuery(props.doc, {
   //   fetchPolicy: 'network-only'
   // });
 
-  React.useEffect(() => {
-    if (
-      called ||
-      parsed.missing.required ||
-      (parsed.missing.optional && !submitted)
-    ) {
-      return;
-    }
+  // React.useEffect(() => {
+  //   if (
+  //     called ||
+  //     parsed.missing.required ||
+  //     (parsed.missing.optional && !submitted)
+  //   ) {
+  //     return;
+  //   }
 
-    query({
-      variables: parsed.variables
-    });
-  }, [parsed, query, called]);
+  //   query({
+  //     variables: parsed.variables
+  //   });
+  // }, [parsed, query, called]);
 
   React.useEffect(() => {
+    // we all ready have data, run this effect only once, or it will cause infinite render
     if ((data || error) && props.item) {
       props.item.next();
     }
-  }, [data, error]);
+  }, []);
 
   if (error) {
     return <ErrorOutput error={error} />;

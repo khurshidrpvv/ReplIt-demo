@@ -57,7 +57,7 @@ const Terminal = () => {
 
     
   const { error, data } = useCustomQuery();
-  // useQuery(
+  // const { error, data } = useQuery(
   //   gql`
   //     query {
   //       command
